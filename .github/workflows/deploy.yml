@@ -1,67 +1,27 @@
-name: Deploy mdBook
+name: Deploy mdBook to GitHub Pages
 
 on:
   push:
-    branches: [ "main" ]
-  workflow_dispatch:
+    branches:
+      - main  
 
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
+
     steps:
-      - uses: actions/checkout@v4
-
-      # 1. 设置Rust工具链
-      - name: Setup Rust
-        uses: actions-rs/toolchain@v1
-        with:
-          toolchain: stable
-          profile: minimal
-          override: true
-
-      # 2. 缓存优化（同时缓存cargo和mdbook）
-      - uses: actions/cache@v3
-        id: cache
-        with:
-          path: |
-            ~/.cargo/bin
-            ~/.cargo/registry/index
-            ~/.cargo/registry/cache
-            ~/.cargo/git/db
-            target
-          key: ${{ runner.os }}-cargo-${{ hashFiles('​**​/Cargo.toml') }}
-          restore-keys: |
-            ${{ runner.os }}-cargo-
-
-      # 3. 通过cargo安装mdBook
+      - name: Checkout repository
+        uses: actions/checkout@v2
+        
       - name: Install mdBook
-        run: |
-          if [ -f ~/.cargo/bin/mdbook ]; then
-            echo "mdBook found in cache"
-          else
-            cargo install mdbook --version 0.4.34 --locked
-          fi
+        run: cargo install mdbook
 
-      # 4. 构建书籍（带错误重试）
-      - name: Build book
-        run: |
-          retry_count=0
-          max_retries=3
-          until mdbook build || [ $retry_count -eq $max_retries ]
-          do
-            retry_count=$((retry_count+1))
-            echo "Retrying build (attempt $retry_count)..."
-            sleep 5
-          done
+      - name: Build the book
+        run: mdbook build docs
 
-          # 处理中文路径问题
-          find book -type f -name "*.html" -exec sed -i 's/%20/-/g; s/ /-/g' {} \;
-
-      # 5. 部署到GitHub Pages
-      - name: Deploy
+      - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
-        if: success()
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_branch: gh-pages
           publish_dir: ./book
-          keep_files: false
