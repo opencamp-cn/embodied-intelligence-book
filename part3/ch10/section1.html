@@ -1,0 +1,221 @@
+<!DOCTYPE HTML>
+<html lang="chinese" class="sidebar-visible no-js light">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>10.1 仿真到实物的迁移学习 - 具身智能系统开发与实践</title>
+
+
+        <!-- Custom HTML head -->
+        
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var html = document.querySelector('html');
+            var sidebar = null;
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../preface.html">前言</a></li><li class="chapter-item expanded "><a href="../../part1/ch1/_index.html"><strong aria-hidden="true">1.</strong> 第1章 具身智能范式演进</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../part1/ch1/section1.html"><strong aria-hidden="true">1.1.</strong> 1.1 从符号主义到具身认知的范式迁移</a></li><li class="chapter-item expanded "><a href="../../part1/ch1/section2.html"><strong aria-hidden="true">1.2.</strong> 1.2 物理具身的四维约束（时空-能量-材料-信息）</a></li><li class="chapter-item expanded "><a href="../../part1/ch1/section3.html"><strong aria-hidden="true">1.3.</strong> 1.3 国产化技术生态现状（飞腾架构/Rust工具链/机器人中间件）</a></li></ol></li><li class="chapter-item expanded "><a href="../../part1/ch2/_index.html"><strong aria-hidden="true">2.</strong> 第2章 Rust系统编程精要</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../part1/ch2/section1.html"><strong aria-hidden="true">2.1.</strong> 2.1 所有权系统与资源管理模型</a></li><li class="chapter-item expanded "><a href="../../part1/ch2/section2.html"><strong aria-hidden="true">2.2.</strong> 2.2 无畏并发与实时性保障</a></li><li class="chapter-item expanded "><a href="../../part1/ch2/section3.html"><strong aria-hidden="true">2.3.</strong> 2.3 零成本抽象在嵌入式场景的应用</a></li><li class="chapter-item expanded "><a href="../../part1/ch2/section4.html"><strong aria-hidden="true">2.4.</strong> 2.4 飞腾派裸金属开发特殊考量</a></li></ol></li><li class="chapter-item expanded "><a href="../../part1/ch3/_index.html"><strong aria-hidden="true">3.</strong> 第3章 ArceOS组件化操作系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../part1/ch3/section1.html"><strong aria-hidden="true">3.1.</strong> 3.1 微内核架构的Rust实现</a></li><li class="chapter-item expanded "><a href="../../part1/ch3/section2.html"><strong aria-hidden="true">3.2.</strong> 3.2 异步驱动框架设计原理</a></li><li class="chapter-item expanded "><a href="../../part1/ch3/section3.html"><strong aria-hidden="true">3.3.</strong> 3.3 安全域隔离机制（TrustZone集成）</a></li><li class="chapter-item expanded "><a href="../../part1/ch3/section4.html"><strong aria-hidden="true">3.4.</strong> 3.4 混合关键任务调度策略</a></li></ol></li><li class="chapter-item expanded "><a href="../../part1/ch4/_index.html"><strong aria-hidden="true">4.</strong> 第4章 Dora-rs机器人中间件</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../part1/ch4/section1.html"><strong aria-hidden="true">4.1.</strong> 4.1 Actor模型在实时系统的实现</a></li><li class="chapter-item expanded "><a href="../../part1/ch4/section2.html"><strong aria-hidden="true">4.2.</strong> 4.2 数据流编程范式优化</a></li><li class="chapter-item expanded "><a href="../../part1/ch4/section3.html"><strong aria-hidden="true">4.3.</strong> 4.3 跨平台通信协议设计</a></li><li class="chapter-item expanded "><a href="../../part1/ch4/section4.html"><strong aria-hidden="true">4.4.</strong> 4.4 故障安全机制实现</a></li></ol></li><li class="chapter-item expanded "><a href="../../part2/ch5/_index.html"><strong aria-hidden="true">5.</strong> 第5章 机电系统建模与控制</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../part2/ch5/section1.html"><strong aria-hidden="true">5.1.</strong> 5.1 双轴差速运动学模型</a></li><li class="chapter-item expanded "><a href="../../part2/ch5/section2.html"><strong aria-hidden="true">5.2.</strong> 5.2 机械臂D-H参数建模与逆解算法</a></li><li class="chapter-item expanded "><a href="../../part2/ch5/section3.html"><strong aria-hidden="true">5.3.</strong> 5.3 伺服系统电流环-速度环-位置环设计</a></li><li class="chapter-item expanded "><a href="../../part2/ch5/section4.html"><strong aria-hidden="true">5.4.</strong> 5.4 执行器安全边界保护策略</a></li></ol></li><li class="chapter-item expanded "><a href="../../part2/ch6/_index.html"><strong aria-hidden="true">6.</strong> 第6章 传感器融合体系</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../part2/ch6/section1.html"><strong aria-hidden="true">6.1.</strong> 6.1 多源时空标定方法</a></li><li class="chapter-item expanded "><a href="../../part2/ch6/section2.html"><strong aria-hidden="true">6.2.</strong> 6.2 视觉-IMU-编码器紧耦合原理</a></li><li class="chapter-item expanded "><a href="../../part2/ch6/section3.html"><strong aria-hidden="true">6.3.</strong> 6.3 基于Rust的卡尔曼滤波实现</a></li><li class="chapter-item expanded "><a href="../../part2/ch6/section4.html"><strong aria-hidden="true">6.4.</strong> 6.4 异常数据鲁棒处理机制</a></li></ol></li><li class="chapter-item expanded "><a href="../../part2/ch7/_index.html"><strong aria-hidden="true">7.</strong> 第7章 实时通信架构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../part2/ch7/section1.html"><strong aria-hidden="true">7.1.</strong> 7.1 确定性网络协议设计</a></li><li class="chapter-item expanded "><a href="../../part2/ch7/section2.html"><strong aria-hidden="true">7.2.</strong> 7.2 共享内存与零拷贝技术</a></li><li class="chapter-item expanded "><a href="../../part2/ch7/section3.html"><strong aria-hidden="true">7.3.</strong> 7.3 基于优先级的数据通道管理</a></li><li class="chapter-item expanded "><a href="../../part2/ch7/section4.html"><strong aria-hidden="true">7.4.</strong> 7.4 通信完整性验证方法</a></li></ol></li><li class="chapter-item expanded "><a href="../../part3/ch8/_index.html"><strong aria-hidden="true">8.</strong> 第8章 视觉感知系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../part3/ch8/section1.html"><strong aria-hidden="true">8.1.</strong> 8.1 嵌入式视觉流水线架构</a></li><li class="chapter-item expanded "><a href="../../part3/ch8/section2.html"><strong aria-hidden="true">8.2.</strong> 8.2 轻量化神经网络部署（飞腾NPU加速）</a></li><li class="chapter-item expanded "><a href="../../part3/ch8/section3.html"><strong aria-hidden="true">8.3.</strong> 8.3 立体视觉深度估计优化</a></li><li class="chapter-item expanded "><a href="../../part3/ch8/section4.html"><strong aria-hidden="true">8.4.</strong> 8.4 动态目标预测算法</a></li></ol></li><li class="chapter-item expanded "><a href="../../part3/ch9/_index.html"><strong aria-hidden="true">9.</strong> 第9章 自主决策系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../part3/ch9/section1.html"><strong aria-hidden="true">9.1.</strong> 9.1 行为树与状态机融合架构</a></li><li class="chapter-item expanded "><a href="../../part3/ch9/section2.html"><strong aria-hidden="true">9.2.</strong> 9.2 基于Rust的实时规划器设计</a></li><li class="chapter-item expanded "><a href="../../part3/ch9/section3.html"><strong aria-hidden="true">9.3.</strong> 9.3 不确定性应对策略（蒙特卡洛方法）</a></li><li class="chapter-item expanded "><a href="../../part3/ch9/section4.html"><strong aria-hidden="true">9.4.</strong> 9.4 能量感知任务调度</a></li></ol></li><li class="chapter-item expanded "><a href="../../part3/ch10/_index.html"><strong aria-hidden="true">10.</strong> 第10章 学习型系统构建</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../part3/ch10/section1.html" class="active"><strong aria-hidden="true">10.1.</strong> 10.1 仿真到实物的迁移学习</a></li><li class="chapter-item expanded "><a href="../../part3/ch10/section2.html"><strong aria-hidden="true">10.2.</strong> 10.2 在线强化学习框架设计</a></li><li class="chapter-item expanded "><a href="../../part3/ch10/section3.html"><strong aria-hidden="true">10.3.</strong> 10.3 参数自整定方法</a></li><li class="chapter-item expanded "><a href="../../part3/ch10/section4.html"><strong aria-hidden="true">10.4.</strong> 10.4 经验回放系统实现</a></li></ol></li><li class="chapter-item expanded "><a href="../../part4/ch11/_index.html"><strong aria-hidden="true">11.</strong> 第11章 安全关键系统设计</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../part4/ch11/section1.html"><strong aria-hidden="true">11.1.</strong> 11.1 形式化验证方法论</a></li><li class="chapter-item expanded "><a href="../../part4/ch11/section2.html"><strong aria-hidden="true">11.2.</strong> 11.2 混合临界资源管理</a></li><li class="chapter-item expanded "><a href="../../part4/ch11/section3.html"><strong aria-hidden="true">11.3.</strong> 11.3 故障树分析与容错设计</a></li><li class="chapter-item expanded "><a href="../../part4/ch11/section4.html"><strong aria-hidden="true">11.4.</strong> 11.4 SIL4级系统实现路径</a></li></ol></li><li class="chapter-item expanded "><a href="../../part4/ch12/_index.html"><strong aria-hidden="true">12.</strong> 第12章 实时性能优化</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../part4/ch12/section1.html"><strong aria-hidden="true">12.1.</strong> 12.1 最坏执行时间分析</a></li><li class="chapter-item expanded "><a href="../../part4/ch12/section2.html"><strong aria-hidden="true">12.2.</strong> 12.2 缓存一致性控制</a></li><li class="chapter-item expanded "><a href="../../part4/ch12/section3.html"><strong aria-hidden="true">12.3.</strong> 12.3 中断延迟优化方法</a></li><li class="chapter-item expanded "><a href="../../part4/ch12/section4.html"><strong aria-hidden="true">12.4.</strong> 12.4 能源效率联合优化</a></li></ol></li><li class="chapter-item expanded "><a href="../../part4/ch13/_index.html"><strong aria-hidden="true">13.</strong> 第13章 驱动开发实践</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../part4/ch13/section1.html"><strong aria-hidden="true">13.1.</strong> 13.1 外设抽象层设计原则</a></li><li class="chapter-item expanded "><a href="../../part4/ch13/section2.html"><strong aria-hidden="true">13.2.</strong> 13.2 DMA安全访问机制</a></li><li class="chapter-item expanded "><a href="../../part4/ch13/section3.html"><strong aria-hidden="true">13.3.</strong> 13.3 异构计算驱动开发</a></li><li class="chapter-item expanded "><a href="../../part4/ch13/section4.html"><strong aria-hidden="true">13.4.</strong> 13.4 热插拔支持实现</a></li></ol></li><li class="chapter-item expanded "><a href="../../part4/ch14/_index.html"><strong aria-hidden="true">14.</strong> 第14章 系统验证方法</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../part4/ch14/section1.html"><strong aria-hidden="true">14.1.</strong> 14.1 硬件在环测试架构</a></li><li class="chapter-item expanded "><a href="../../part4/ch14/section2.html"><strong aria-hidden="true">14.2.</strong> 14.2 模糊测试用例生成</a></li><li class="chapter-item expanded "><a href="../../part4/ch14/section3.html"><strong aria-hidden="true">14.3.</strong> 14.3 全场景覆盖测试</a></li><li class="chapter-item expanded "><a href="../../part4/ch14/section4.html"><strong aria-hidden="true">14.4.</strong> 14.4 长期运行老化测试</a></li></ol></li><li class="chapter-item expanded "><a href="../../part5/ch15/_index.html"><strong aria-hidden="true">15.</strong> 第15章 群体智能系统</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../part5/ch15/section1.html"><strong aria-hidden="true">15.1.</strong> 15.1 分布式共识算法优化</a></li><li class="chapter-item expanded "><a href="../../part5/ch15/section2.html"><strong aria-hidden="true">15.2.</strong> 15.2 群体任务分配博弈论模型</a></li><li class="chapter-item expanded "><a href="../../part5/ch15/section3.html"><strong aria-hidden="true">15.3.</strong> 15.3 自组织通信协议设计</a></li><li class="chapter-item expanded "><a href="../../part5/ch15/section4.html"><strong aria-hidden="true">15.4.</strong> 15.4 群体涌现行为分析</a></li></ol></li><li class="chapter-item expanded "><a href="../../part5/ch16/_index.html"><strong aria-hidden="true">16.</strong> 第16章 自进化系统架构</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../part5/ch16/section1.html"><strong aria-hidden="true">16.1.</strong> 16.1 持续学习框架设计</a></li><li class="chapter-item expanded "><a href="../../part5/ch16/section2.html"><strong aria-hidden="true">16.2.</strong> 16.2 数字孪生与物理系统交互</a></li><li class="chapter-item expanded "><a href="../../part5/ch16/section3.html"><strong aria-hidden="true">16.3.</strong> 16.3 认知架构实现路径</a></li><li class="chapter-item expanded "><a href="../../part5/ch16/section4.html"><strong aria-hidden="true">16.4.</strong> 16.4 伦理约束机制设计</a></li></ol></li><li class="chapter-item expanded "><a href="../../appendix/_index.html">附录</a></li><li class="chapter-item expanded affix "><a href="../../references.html">参考文献</a></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <!-- Track and set sidebar scroll position -->
+        <script>
+            var sidebarScrollbox = document.querySelector('#sidebar .sidebar-scrollbox');
+            sidebarScrollbox.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    sessionStorage.setItem('sidebar-scroll', sidebarScrollbox.scrollTop);
+                }
+            }, { passive: true });
+            var sidebarScrollTop = sessionStorage.getItem('sidebar-scroll');
+            sessionStorage.removeItem('sidebar-scroll');
+            if (sidebarScrollTop) {
+                // preserve sidebar scroll position when navigating via links within sidebar
+                sidebarScrollbox.scrollTop = sidebarScrollTop;
+            } else {
+                // scroll sidebar to current active section when navigating via "next/previous chapter" buttons
+                var activeSection = document.querySelector('#sidebar .active');
+                if (activeSection) {
+                    activeSection.scrollIntoView({ block: 'center' });
+                }
+            }
+        </script>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">具身智能系统开发与实践</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="101-仿真到实物的迁移学习"><a class="header" href="#101-仿真到实物的迁移学习">10.1 仿真到实物的迁移学习</a></h1>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../part3/ch10/_index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next" href="../../part3/ch10/section2.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../part3/ch10/_index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next" href="../../part3/ch10/section2.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../../elasticlunr.min.js"></script>
+        <script src="../../mark.min.js"></script>
+        <script src="../../searcher.js"></script>
+
+        <script src="../../clipboard.min.js"></script>
+        <script src="../../highlight.js"></script>
+        <script src="../../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
