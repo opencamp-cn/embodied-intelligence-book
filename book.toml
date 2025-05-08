@@ -1,0 +1,74 @@
+[book]
+title = "具身智能系统开发与实践"
+authors = ["OpenCamp训练营团队"]
+language = "zh-CN"
+multilingual = false
+src = "src"
+build-dir = "target/book"
+default-theme = "coal"  # 深色主题更适合技术文档
+preferred-dark-theme = "navy"
+git-repository-url = "https://github.com/opencamp-cn/embodied-intelligence-book"
+edit-url-template = "https://github.com/opencamp-cn/embodied-intelligence-book/edit/main/{path}"
+
+[output.html]
+mathjax-support = true
+additional-css = ["theme/custom.css"]
+additional-js = [
+    "theme/mermaid.min.js",
+    "theme/copy-code.js"
+]
+no-section-label = true  # 禁用自动生成的章节编号
+git-repository-icon = "github"
+git-repository-url = "https://github.com/opencamp-cn/embodied-intelligence-book"
+site-url = "https://opencamp-cn.github.io/embodied-intelligence-book/"
+default-theme = "rust"
+preferred-dark-theme = "coal"
+curly-quotes = true  # 中文引号优化
+copy-fonts = true
+
+# 搜索配置（支持中文）
+[output.html.search]
+limit-results = 20
+use-boolean-and = true
+boost-title = 2
+boost-hierarchy = 1
+boost-paragraph = 1
+expand = true
+heading-split-level = 3
+
+# 打印优化
+[output.print]
+enable = true
+prefer-page-breaks = true
+
+# 插件配置
+[preprocessor.links]
+render-external-links = true
+
+[preprocessor.mermaid]
+command = "mdbook-mermaid"
+version = "0.12.0"
+
+[preprocessor.katex] 
+macros = {
+    "\\RR": "\\mathbb{R}",
+    "\\grad": "\\nabla",
+    "\\argmax": "\\operatorname*{arg\\,max}",
+    "\\softmax": "\\operatorname{softmax}"
+}
+
+# 必须添加的插件声明
+[preprocessor.katex.command]
+version = "0.3.0"
+
+# Rust代码高亮增强
+[rust]
+edition = "2021"
+code-line-numbers = true
+dependencies = [
+    { name = "serde", version = "1.0", features = ["derive"] }
+]
+
+[build]
+extra-watch-dirs = ["theme", "examples"]
+create-missing = true  # 自动创建缺失章节
